@@ -1,0 +1,96 @@
+data:
+  chengdu:
+    log_path: 'log/chengdu/'
+    param_path: 'params/chengdu/'
+    dataset_path: data/chengdu/dataset.npy
+    adjacency_matrix_path: data/chengdu/matrix.npy
+    moments: 2
+    max_norm: 5
+    time_step: 17280
+    node_num: 524
+    num_of_times: 144
+    num_of_days: 7
+
+  shenzhen:
+    log_path: 'log/shenzhen/'
+    param_path: 'params/shenzhen/'
+    dataset_path: data/shenzhen/dataset.npy
+    adjacency_matrix_path: data/shenzhen/matrix.npy
+    moments: 2
+    max_norm: 5
+    time_step: 17280
+    node_num: 627
+    num_of_times: 144
+    num_of_days: 7
+
+  pems08:
+    log_path: 'log/pems08/'
+    param_path: 'params/pems08/'
+    dataset_path: data/pems08/PEMS08.npz
+    adjacency_matrix_path: data/pems08/matrix.npy
+    moments: 2
+    max_norm: 10
+    time_step: 17856
+    node_num: 170
+    num_of_times: 288
+    num_of_days: 7
+
+  pems04:
+    log_path: 'log/pems04/'
+    param_path: 'params/pems04/'
+    dataset_path: data/pems04/PEMS04.npz
+    adjacency_matrix_path: data/pems04/matrix.npy
+    moments: 2
+    max_norm: 10
+    time_step: 16992
+    node_num: 307
+    num_of_times: 288
+    num_of_days: 7
+
+  pems03:
+    log_path: 'log/pems03/'
+    param_path: 'params/pems03/'
+    dataset_path: data/pems03/PEMS03.npz
+    adjacency_matrix_path: data/pems03/matrix.npy
+    moments: 2
+    max_norm: 10
+    time_step: 26208
+    node_num: 358
+    num_of_times: 288
+    num_of_days: 7
+
+  pems07:
+    log_path: 'log/pems07/'
+    param_path: 'params/pems07/'
+    dataset_path: data/pems07/PEMS07.npz
+    adjacency_matrix_path: data/pems07/matrix.npy
+    moments: 2
+    max_norm: 10
+    time_step: 28224
+    node_num: 883
+    num_of_times: 288
+    num_of_days: 7
+  
+task:
+  train_rate: 0.6
+  val_rate: 0.2
+  test_rate: 0.2
+  source_epoch: 200
+  transition_epoch: 10
+  finetuning_epoch: 20
+  his_num: 12
+  pred_num: 12
+  batch_size: 32
+
+model:
+  num_of_clusters: 5
+  num_of_latents: 32
+  num_of_layers: 4
+  num_of_features: 1
+  num_of_outputs: 1
+  d_model: 64
+  output_dim: 1
+  meta_dim: 16
+  source_lr: 0.001
+  transition_lr: 0.001
+  finetuning_lr: 0.0002
