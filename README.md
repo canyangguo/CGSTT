@@ -12,6 +12,3 @@ python main.py --source_dataset pems08 --target_dataset pems04 --target_day 3  -
 * pyaml
 * scipy
 * tqdm
-
-## dataset
-downing from https://drive.google.com/drive/folders/102G0doaeV7J99qWvLYEeEN2Do6WyUa4f?usp=sharing
