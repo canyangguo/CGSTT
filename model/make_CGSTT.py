@@ -206,13 +206,13 @@ class start_make_model(nn.Module):
             # select index
             sim1, gv1, gi = self.index_selector(mbx, x)  # B
 
-            gi = ti[gi]
+            gi = s2t_id[ti]
 
             for st_module in self.st_models:
                 x = st_module(x, ti, ti, ep, tdx, S2D)
                 mbx = st_module(mbx, gi, gi, ep, tdx, S2D)
 
-            mbx = self.var_layer2(mbx, tid, ep, tdx, S2D)  # 需要想想位置要不要变换
+            mbx = self.var_layer2(mbx, tid, ep, tdx, S2D) 
 
             x = self.re_emb_s(x)
             mbx = self.re_emb_s(mbx)
@@ -230,13 +230,11 @@ class start_make_model(nn.Module):
             x = self.var_layer1(x, ti, ep, tdx, S2D)
 
             gi = s2t_id[ti]
-            # gi = torch.randint(0, self.sc.shape[0], size=gi.shape)
-            # gi = (ti + np.random.randint(0, self.sc.shape[0])) % self.sc.shape[0]
 
             for st_module in self.st_models:
                 x = st_module(x, gi, gi, ep, tdx, S2D)
 
-            x = self.var_layer2(x, ti, ep, tdx, S2D)  # 需要想想位置要不要变换
+            x = self.var_layer2(x, ti, ep, tdx, S2D)  
             x = self.re_emb_s(x)
             return (x * self.mean_std[1] + self.mean_std[0]).squeeze(-1)
 
