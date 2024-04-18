@@ -204,7 +204,7 @@ class start_make_model(nn.Module):
             mbx = self.var_layer1(mbx, tid, ep, tdx, S2D)
 
             # select index
-            sim1, gv1, gi = self.index_selector(mbx, x)  # B
+            sim1, gv1, _ = self.index_selector(mbx, x)  # B
 
             gi = s2t_id[ti]
 
